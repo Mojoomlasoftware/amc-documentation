@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<!-- Basic Page Needs
+         ================================================== -->
+	<meta charset="utf-8">
+	<title>AMC management system - Documentation</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Metas	
+         ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- CSS
+         ================================================== -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+	<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Roboto+Slab:300,400" rel="stylesheet"
+		type="text/css">
+	<!-- JS
+         ================================================== -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+      <script src="js/modernizr.custom.11889.js" type="text/javascript"></script>
+      <![endif]-->
+	<!-- HTML5 Shiv events (end)-->
+	<!-- Favicons
+         ================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+	<!-- Primary Page Layout
+         ================================================== -->
+	<div id="wrap" class="colorskin-0">
+		<!-- end-header -->
+		<section class="container">
+			<div class="row">
+				<div id="header-sm">
+
+					<div class="col-md-8 col-md-offset-1 desc">
+						<h4 class="slight">AMC Management System</h4>
+						<h5 class="slight"><small> Documented by Mojoomla - </small></h5>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<aside id="side-nav">
+						<div class="logo"> <img src="image/mojoomla_logo.png" id="img-logo" alt="mojoomla"
+								style="margin-bottom:20px;"> </div>
+						<ul id="top-menu">
+							<li><a class="current" href="#Introduction">Introduction</a></li>
+							<li><a href="#Installation">Installation</a></li>
+							<li><a href="#fronted-login">Fronted Login Page</a></li>
+							<li id="admin"
+								style="background: url(css/img/back-to-buttom.png) no-repeat scroll right center rgba(0, 0, 0, 0); padding-bottom: 5px;">
+								Admin View
+								<ul id="admin_id" style="display:none;">
+									<li><a href="#admin_view">Dashboard</a></li>
+									<li><a href="#Setting">Setting</a></li>
+									<li>Products
+										<ul style="display:block;">
+											<li><a href="#product">Product</a></li>
+											<li><a href="#Supplier">Supplier</a></li>
+											<li><a href="#Purchase">Purchase</a></li>
+											<li><a href="#Stock">Stock</a></li>
+											<li><a href="#Tax">Tax</a></li>
+										</ul>
+									</li>
+									<li><a href="#Client">Client</a></li>
+									<li><a href="#Employee">Employee</a></li>
+									<li><a href="#Quotation">Quotation</a></li>
+									<li><a href="#Sales">Sales</a></li>
+									<li><a href="#AMC">AMC</a></li>
+									<li><a href="#Complaint">Complaint</a></li>
+									<li><a href="#Service">Service</a></li>
+									<li><a href="#Task">Task</a></li>
+
+									<li><a href="#Expenses">Expenses</a></li>
+									<li><a href="#Income">Income</a></li>
+									<li><a href="#Reports">Reports</a></li>
+									<li><a href="#Mail">Mail Format</a></li>
+								</ul>
+							</li>
+							<li id="employee_click"
+								style="background: url(css/img/back-to-buttom.png) no-repeat scroll right center rgba(0, 0, 0, 0); padding-bottom: 5px;">
+								Employee View
+								<ul id="employeeid" style="display:none;">
+									<li><a href="#Dashboard1">Dashboard</a></li>
+									<li><a href="#Supplier_Id">Supplier</a></li>
+									<li><a href="#Client_Id">Client</a></li>
+									<li><a href="#Employee_Id">Employee</a></li>
+									<li><a href="#AMC_Id">AMC</a></li>
+									<li><a href="#Complaint_Id">Complaint</a></li>
+									<li><a href="#Service_Id">Service</a></li>
+									<li><a href="#Task_Id">Task</a></li>
+								</ul>
+							</li>
+							<li id="client_click"
+								style="background: url(css/img/back-to-buttom.png) no-repeat scroll right center rgba(0, 0, 0, 0);padding-bottom: 5px;">
+								Client View
+								<ul id="clientid" style="display:none;">
+									<li><a href="#Dashboard">Dashboard</a></li>
+									<li><a href="#Client_Name">Client</a></li>
+									<li><a href="#Quotation_Name">Quotation</a></li>
+									<li><a href="#Sales_Name">Purchase</a></li>
+									<li><a href="#AMC_Name">AMC</a></li>
+									<li><a href="#Complaint_Name">Complaint</a></li>
+									<li><a href="#Service_Name">Service</a></li>
+								</ul>
+							</li>
+							<li><a href="#FAQ">FAQ</a></li>
+						</ul>
+					</aside>
+				</div>
+
+				<div class="col-md-8">
+					<div id="header" class="row">
+						<div class="col-md-3 logo"> <a href="AMC.html"><img src="image/logo.png" id="img-logo"
+									alt="logo"></a> </div>
+						<div class="col-md-8 col-md-offset-1 desc">
+							<h4 class="slight">AMC - Annual Maintenance Contract</h4>
+							<h5 class="slight"><small>Documented by Mojoomla</a> - at Jan 06, 2023</small></h5>
+						</div>
+					</div>
+					<section id="Introduction">
+						<hr class="vertical-space2">
+						<p align="center"><img src="image/preview-image.png"></p>
+						<h3><strong>A) Introduction</strong></h3>
+						<p>
+							Annual Maintenance Contract System is ideal way to manage complete Annual Maintenance. It
+							has different user roles like Employee, Customer and admin user.
+						</p>
+						<p>This user guide covers all options that this react js provides. Please read the documentation
+							carefully as it probably contains answers to most of questions that may arise. If your feel
+							some aspect is not covered or have some questions, contact us via e-mail sales@mojoomla.com.
+							We will do our best to answer your in shortest time.</p>
+						<hr class="vertical-space2">
+						<section id="Package">
+							<hr class="vertical-space2">
+
+
+							<section id="Installation">
+								<h3><strong>B) Installation</strong></h3><br><br>
+
+								<h3><strong>I) Backend Setup </strong></h3><br>
+
+								<!-- <h4><strong>1) Mongo DB Installation :- </strong></h4><br>
+								<p> Firstly you have to install mongo db so you can able to import your database. follow
+									this url step for the installation process <a target="_blank"
+										href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/">here</a>
+								</p> -->
+
+								<!-- <h4><strong>2) Database Import :- </strong></h4><br>
+								<p> After installed mongo db follow this url step for the database import <a
+										target="_blank"
+										href="https://www.mongodb.com/docs/compass/current/import-export/">here</a></p> -->
+
+								<h4><strong>1) FTP Upload :-</h4></strong>
+								<ol>
+									<li>If you have not FileZilla then download <a target="_blank"
+											href="https://filezilla-project.org/">here</a>
+									</li>
+									<li>Unzip the "
+										<mark>AMC-package.zip</mark>
+										" file
+									</li>
+									<li>Upload the extracted
+										<mark>"amc_api"</mark>
+										folder into your server using through FileZilla. If you don't know then follow
+										this <a target="_blank"
+											href="https://www.youtube.com/watch?v=XJEsFds7588">link</a> for file upload
+										process.
+									</li>
+								</ol>
+								<h4><strong>2) Env File Update :- </strong></h4><br>
+								<p> Above process completed then update your backend .env file in notepad as per the
+									your mongo db database configuration.</p>
+								<p> For the SMTP Configuration follow this <a target="_blank"
+										href="https://support.google.com/mail/answer/185833?hl=en-GB">link</a></p>
+								<img alt="Tax" src="image/env_Database_update.png"><br><br>
+
+								<!-- <h4><strong>5) Import API Collection :- </strong></h4><br>
+								<ol>
+									<li>If you have not postman then download <a target="_blank"
+											href="https://www.postman.com/downloads/">here</a></li>
+									<li>Follow this <a target="_blank"
+											href="https://www.youtube.com/watch?v=-7k5ww-mFJk">tutorial</a> for import
+										API collection in postman.</li>
+									<li>Import your API collection in postman to check the api is working. also we are
+										set admin credentials email is <mark>admin@gmail.com</mark> and password is
+										<mark>admin</mark>
+									</li>
+								</ol> -->
+
+								<h3><strong>II) Frontend Setup </strong></h3><br>
+
+								<h3><strong>A) Build Process:</strong></h3><br>
+								<h4>1).Package File UnZip</h4>
+
+								<h6>1.1). File Unzip</h6>
+								<p> First Unzip the <mark>amc_package.zip</mark> File and inside amc_package Folder Unzip <mark>build.zip</mark> File Then Change Base URL of the .env File in the Build Folder. For Reference Click <a
+									target="_blank"
+									href="https://www.awesomescreenshot.com/video/19685472?key=caf50dedf9626f7398860dff864584d1">here</a></p>
+								<p>In the .env File Replace Your URL With this Yellow highlight Part --> set REACT_APP_BASE_URL=
+									<mark>https://pushnifty.com/dasinfoau/php/amc/amc_api_laravel/public</mark>/api</p>
+
+								<!-- <h6>1.1). File Unzip</h6>
+								<p> First Unzip the Zip File. For Reference Click <a
+									target="_blank"
+									href="https://www.awesomescreenshot.com/video/19645454?key=2a72d90a530662247bbe3120c1c1ccf6">here</a></p> -->
+
+								<!-- <h6>1.2). Change Base URL</h6>
+								<p>Change base url in .env File inside amc_react Folder. For Reference Click <a
+										target="_blank"
+										href="https://www.awesomescreenshot.com/video/19645454?key=2a72d90a530662247bbe3120c1c1ccf6">here</a>
+								</p> -->
+
+								<!-- <h4>2).Create Build File</h4>
+								<h6>2.1). Node Package Install</h6>
+								<p>Open Command Prompt in amc_react Folder and Using npm install Command Install Node
+									Modules. For Reference Click <a target="_blank"
+									href="https://www.awesomescreenshot.com/video/19645900?key=13ac5cf6d0c8183a6282aabcd4ce7e68">here</a> </p>
+								<h6>2.2). Create Build File</h6>
+								<p>After Node Modules Install, Fire npm run winBuild Command in the Command Prompt to
+									Create a Build File. 
+									For Reference Click <a target="_blank"
+										href="https://www.awesomescreenshot.com/video/19646167?key=19ada6fcfe2423c095a2019e076ae2b8">here</a>
+								</p>
+								<h6>2.3). Create a .env in Build Folder</h6>
+								<p>For Create a .env file run  set REACT_APP_BASE_URL=
+									<mark>https://pushnifty.com/dasinfoau/php/amc/amc_api_laravel/public</mark>/api&&
+									npx react-inject-env set Command in the Command Prompt.
+									For Reference Click <a target="_blank"
+										href="https://www.awesomescreenshot.com/video/19646167?key=19ada6fcfe2423c095a2019e076ae2b8">here</a>
+								</p>
+								<p><mark> Note : Replace your api Link with Yellow marked path and set REACT_APP_BASE_URL and
+									run Command in Command Prompt </mark>
+								</p> -->
+
+								<h4>2).FTP Process</h4>
+								<h6>2.1). FTP Connection (FileZilla)</h6>
+								<p>Set your ftp details in ftp(FileZilla) and connect the Server. For Reference Click <a
+										target="_blank"
+										href="https://www.awesomescreenshot.com/video/19646459?key=828d1127b9786e382304caeb4f5f9b43">here</a>
+								</p>
+								<h6>2.2). Upload all build Files</h6>
+								<p>Select all the Build Files from Directory and Upload all Selected Files to your
+									server from FTP. For Reference Click <a target="_blank"
+										href="https://www.awesomescreenshot.com/video/19647615?key=5f8cd5014bb8b4439a483c984c638be8">here</a>
+								</p>
+
+								<h3><strong>B) Installation Locally:</strong></h3><br>
+								<h4>1).API Setup</h4><br />
+								<img src="image/Installer/backend_API_setup.png" /><br><br>
+
+								<p>First step of wizard is test api. If you getting this kind of error then first you
+									have to set your domain url in <strong>.env</strong> file. Update only mark part as
+									mentioned in the below image. after restart your project </p>
+								<img src="image/Installer/domain_API_update.png" /><br><br>
+
+								<h4>2).Purchase Information</h4><br />
+								<img src="image/Installer/wizard_first_step.png" /><br><br>
+
+								<ol>
+									<li><strong>Domain Name :</strong> Enter your domain name.</li>
+									<li><strong>Purchase Key :</strong> Enter your purchase key.</li>
+									<li><strong>Email:</strong> Enter your email address</li>
+								</ol><br><br>
+								<h4>3).Database Setup</h4><br />
+								<img src="image/Installer/Wizard_second_step.png" /><br><br>
+
+								<ol>
+									<li><strong>Database Name :</strong> Enter database name.</li>
+									<li><strong>Database Usename :</strong> Enter database user name.</li>
+									<li><strong>Database Password :</strong> Enter database password.</li>
+									<li><strong>Host :</strong> <mark> localhost </mark></li>
+									<li><strong>Port :</strong> <mark> 3306 </mark></li>
+
+								</ol><br><br>
+
+
+								<h4>4).Login Details</h4><br />
+								<img src="image/Installer/Wizard_third_step.png" /><br><br>
+								<ol>
+									<li><strong>Email :</strong> Enter email address.</li>
+									<li><strong>Password :</strong> Enter passsword.</li>
+									<li><strong>Confirm Password :</strong> Enter confirm password.</li>
+
+								</ol><br><br>
+
+								<h4>5).Finish</h4><br />
+								<img src="image/Installer/Wizard_final_step.png" /><br><br>
+								<ul>
+									<li>Read the notes and click on install now.</li>
+								</ul>
+								<p>For Reference Click <a target="_blank"
+									href="https://www.awesomescreenshot.com/video/19647933?key=3e0fd359d1d343e0d2253a11169b0c3a">here</a>
+								</p>
+
+								<!-- <h3><strong>B) Installation Live:</strong></h3><br>
+								<p>All Wizard setup are same as local for live only just you have to update your <strong>.env</strong> file. Go to build/env.js root folder and change with your api base URL insted of
+									<strong>"http://api.amc.niftysol.com/api"</strong> this base URL</p>
+								<img alt="Tax" src="image/Installer/build_domain_url.png"><br><br>
+								<h4><strong>2) Build Upload :- </strong></h4><br>
+								<p> After update REACT_APP_BASE_URL upload your build folder on your server</p>
+
+								<img src="image/newimage/Users.png" /><br><br>
+								<p>Once System installed successfully.You can login into the system with entered
+									username and password.</p>
+
+								<p>You can reset your password by going to profile page.Click on top right corner menu
+									and click on profile.</p> -->
+
+								<hr>
+							</section>
+
+							<!-- Login page -->
+
+							<section id="fronted-login">
+								<h3><strong>C) Frontend Login Page:</strong></h3><br />
+
+								<section id="login-page-setting">
+
+									<p> You can now login with admin username and password. </p><br />
+									<h4>Login Page :</h4>
+
+									<img alt="" src="image/newimage/Login.png"><br>
+									<p>Now all user can login from this login page. </p><br>
+								</section>
+								<!-- Admin View  -->
+								<section id="admin_view">
+									<section id="admin-dasboard">
+										<h3><strong>D) Admin View:</strong></h3><br />
+										<h4><strong>1) Dashboard:</strong>
+											<h4><br />
+												<p> Admin side dashboard view.</p><br />
+												<img alt="Admin View"
+													src="image/newimage/Admin/admin-view.png"><br /><br />
+												<hr>
+									</section>
+									<!-- General Settings  -->
+									<section id="Setting">
+										<section id="General-Settings">
+											<h4><strong>2) Settings</strong></h3><br />
+
+												<h5>A) General Settings</h5><br />
+												<p>Click on <strong>Setting</strong> inside Click on <strong>General
+														Setting</strong> to start setting up the system . You are
+													advised to fill all fields of General settings as these details are
+													used in different section of whole system .You can change these
+													settings as per your requirement.</p><br />
+												<img alt="General Settings"
+													src="image/newimage/Admin/General-Setting.png">
+												<br>
+												<br>
+												<ul>
+
+
+													<h6>System Settings</h6>
+													<li><strong>AMC Name :</strong> Enter name of AMC.</li>
+													<li><strong>Upload Icon : </strong>Upload AMC Icon </li>
+													<li><strong>AMC Address : </strong>Enter address of the AMC.</li>
+													<li><strong>Starting Year : </strong>Enter starting year of the AMC.
+													</li>
+													<li><strong>E-mail : </strong>Enter official e-mail address of the
+														AMC.</li>
+													<li><strong>Logo Image : </strong>Upload Logo Image.</li>
+													<li><strong>Select Country : </strong>Select Country.</li>
+													<li><strong>Select Language : </strong>Select Language of the AMC.
+													</li>
+													<li><strong>Send E-mail Notification : </strong>select checkbox if
+														you want to send email.</li>
+													<li><strong>Date Format : </strong>Select Date Formate.</li>
+
+
+
+												</ul><br />
+
+										</section>
+										<!--  Access Right Settings  -->
+										<section id="General-Settings">
+
+											<h5>B) Access Right Settings</h5><br />
+											<p>Click on <strong>General Setting</strong> inside Click on <strong>Access
+													Right</strong> to start setting up the system . Access rights is
+												used to give access of functionality to Employee and Client, Based on
+												selected option access will be given to Employee and Client.
+											</p><br />
+
+											<img alt="Access Right"
+												src="image/newimage/Admin/Access-Right.png"><br /><br />
+										</section>
+										<!-- Master inside Product Module-->
+										<section id="product">
+
+											<h4><strong>3) Products</strong></h4><br />
+
+											<section id="product">
+												<h5><strong>I) Product:</strong></h5><br />
+												<p><strong>Product List:</strong> Admin can add new Product type and
+													manage all types of Product as well as view complete list of all
+													ProductType.</p><br />
+
+												<img alt="Product List"
+													src="image/newimage/Admin/Product-list.png"><br><br>
+
+
+												<p><strong>Add Product Type:</strong> Admin can add product details</p>
+												<br />
+
+												<img alt="Product Type"
+													src="image/newimage/Admin/Product-add.png"><br><br>
+												<ul>
+													<li><strong>Item Code</strong>: Item Code Auto Generated.</li>
+													<li><strong>Item Name</strong>: Enter new Item name.</li>
+													<li><strong>Model Number</strong>: Enter new Model Number.</li>
+													<li><strong>Brand</strong>: Select Brand from the list.</li>
+													<li><strong>Add Or Remove</strong>: If desired Brand is not
+														available in list then click on <strong>Add Or Remove</strong>
+														button. You can add new Brand from here.</li>
+													<img alt="Brand" src="image/Admin/Product-Brand.png"><br><br>
+													<li><strong>Product Category</strong>: Select Product category from
+														the list.</li>
+													<li><strong>Add Or Remove</strong>: If desired Product category is
+														not available in list then click on <strong>Add Or
+															Remove</strong> button. You can add new category from here.
+													</li><br><br>
+													<img alt="cetegory" src="image/Admin/Product-Category.png"><br><br>
+													<li><strong>Price</strong>: Enter Price.</li>
+													<li><strong>Unit</strong>: Select Unit from the list.</li>
+													<li><strong>Add Or Remove</strong>: If desired Unit is not available
+														in list then click on <strong>Add Or Remove</strong> button. You
+														can add new Unit from here.</li>
+													<img alt="Unit" src="image/Admin/Product-Unit.png"><br><br>
+													<li><strong>Product Image</strong>: Upload image for this Product.
+													</li>
+													<li><strong>Product Specification</strong>: Enter Product
+														Specification for this Product.</li>
+
+												</ul>
+												<p><strong>Edit Product:</strong> Admin can Edit detail of particular
+													Product by clicking on Edit detail button. This will open up
+													details. From here admin can Change Product Details.</p><br />
+
+												<img alt="Product Type"
+													src="image/newimage/Admin/Product-Edit.png"><br><br>
+
+												<p><strong>Archive Product:</strong> Admin can Archive detail of
+													particular Product by clicking on Archive detail button. This will
+													Move details in Archive List.</p><br />
+
+												<img alt="Product Type"
+													src="image/newimage/Admin/Product-Archiv.png"><br><br>
+
+
+												<hr>
+											</section>
+											<!-- Master inside Supplier Module-->
+
+											<section id="Supplier">
+												<h5><strong>II) Supplier:</strong></h5><br />
+												<p><strong>Supplier List:</strong> Admin can add new Supplier, manage
+													all Supplier and view complete list of all Supplier.</p><br />
+
+												<img alt="Supplier" src="image/newimage/Admin/user-list.png"><br><br>
+
+
+												<p><strong>Add Supplier:</strong> Admin can add supplier details. </p>
+												<br />
+												<img alt="Supplier" src="image/newimage/Admin/Supplier-Add.png"><br><br>
+												<ul>
+													<li><strong>Supplier No</strong>: Supplier No Auto Generated.</li>
+													<li><strong>First Name</strong>: Enter new First name for this
+														Supplier.</li>
+													<li><strong>Last Name</strong>: Enter new Last name for this
+														Supplier.</li>
+													<li><strong>Middle Name</strong>: Enter new Middle name for this
+														Supplier.</li>
+													<li><strong>Email</strong>: Enter new Email for this Supplier.</li>
+													<li><strong>Address</strong>: Enter new Address for this Supplier.
+													</li>
+													<li><strong>Photo</strong>: Upload image for this Supplier.</li>
+													<li><strong>Company Name</strong>: Upload image for this Supplier.
+													</li>
+													<li><strong>City</strong>: Enter city name for this Supplier.</li>
+													<li><strong>State</strong>: Enter state name for this Supplier.</li>
+													<li><strong>Country</strong>: Enter company name for this Supplier.
+													</li>
+													<li><strong>Zip Code</strong>: Enter zip code name for this
+														Supplier.</li>
+
+													<h6>Account Details</h6>
+													<li><strong>Mobile No</strong>: Enter new Mobile Number for this
+														Supplier.</li>
+													<li><strong>Account No</strong>:Enter new Account Number for this
+														Supplier..</li>
+													<li><strong>Bank Name</strong>:Enter Bank Name Number for this
+														Supplier..</li>
+													<li><strong>Branch Name</strong>: Enter new Branch Name for this
+														Supplier.</li>
+													<li><strong>Swift Code</strong>:Enter new Swift Code for this
+														Supplier..</li>
+													<li><strong>Branch code</strong>: Enter Banch code of the Bank for
+														this Supplier.</li>
+													<li><strong>International Bank Code</strong>: Enter International
+														Bank Code for this Supplier.</li>
+													<li><strong>National Bank Code</strong>: Enter National Bank Code
+														for this Supplier.</li>
+
+												</ul>
+												<p><strong>Edit Supplier:</strong> Admin can Edit detail of particular
+													Supplier by clicking on Edit detail button. This will open up
+													details. From here admin can Change Supplier Details.</p></br />
+												<img alt="Supplier"
+													src="image/newimage/Admin/Supplier-Edit.png"><br><br>
+
+												<hr>
+											</section>
+											<!-- Master inside Purchase Module-->
+											<section id="Purchase">
+												<h5><strong>III) Purchase:</strong></h5><br />
+												<p><strong> Purchase List:</strong>
+													You can add new Purchase, manage all Purchase and view complete list
+													of all Purchase.</p><br />
+
+												<img alt="Purchase"
+													src="image/newimage/Admin/Purchase-list.png"><br><br>
+
+
+												<p><strong>Add Purchase:</strong>
+													You can add purchase details.</p><br />
+												<img alt="Purchase" src="image/newimage/Admin/Purchase-Add.png"><br><br>
+												<ul>
+													<li><strong>Purchase No</strong>: Purchase No Auto Generated.</li>
+													<li><strong>Status</strong>: Select Status of Purchase.</li>
+													<li><strong>Purchase Date</strong>: Select Purchase date for this
+														Purchase.</li>
+													<li><strong>Contact Person:</strong>: Enter new Contact Person name
+														for this Purchase.</li>
+													<li><strong>Supplier Name</strong>: Select Supplier name for this
+														Purchase.</li>
+													<li><strong>Email</strong>: Enter new Email for this Purchase.</li>
+													<li><strong>Billing Address</strong>: Enter new Address for this
+														Purchase.</li>
+													<h6>Purchase Details</h6>
+													<li><strong>Add New</strong>: Add New Product for the Purchase.</li>
+													<li><strong>Product</strong>: Select Product for this Supplier.</li>
+													<li><strong>Quantity</strong>:Enter Quantity for this Supplier.</li>
+													<li><strong>Price</strong>:Select Product and Auto Generated Price
+													</li>
+													<li><strong>Amount</strong>:Select Product and Quantity and Auto
+														Generated Amount.</li>
+													<li><strong>Action</strong>:Delete Product for Purchase</li>
+												</ul>
+
+												<p><strong>View Purchase:</strong> Admin can view detail of particular
+													Purchase by clicking on view detail button. This will open up
+													details. From here admin can also Print Out view Purchase.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Purchase-View.png"><br /><br />
+
+												<p><strong>Edit Purchase:</strong>
+													Admin can Edit detail of particular Purchase by clicking on Edit
+													detail button. This will open up details. From here admin can Change
+													Purchase Details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Purchase-Edit.png"><br /><br />
+
+												<hr>
+											</section>
+											<!-- Master inside in Stock Module --->
+											<section id="Stock">
+												<h5><strong>IV) Stock:</strong></h5><br />
+												<p><strong> Stock List:</strong>
+													Admin can view complete list of all Stock and view detail of
+													particular Stock by clicking on view detail button. This will open
+													up details. From here admin can also Print Out view Stock.</p><br />
+
+												<img alt="Stock" src="image/newimage/Admin/Stock.png"><br><br>
+
+
+												<p><strong>View Stock:</strong>
+													Admin can view the particular stock details.</p><br />
+												<img alt="Stock" src="image/newimage/Admin/Stock-view.png"><br><br>
+
+												<hr>
+											</section>
+
+											<!-- Tax Module -->
+											<section id="Tax">
+
+												<h4><strong>V)Tax</strong></h4><br />
+												<p><strong>Tax List:</strong> Admin can add new Tax, manage all Tax and
+													view complete list of all Tax.</p><br>
+												<img alt="Tax" src="image/newimage/Admin/Tax-list.png"><br><br>
+												<p><strong>Add Tax:</strong> Admin can add tax details.</p><br />
+												<img alt="Tax" src="image/newimage/Admin/Tax-Add.png"><br><br>
+												<ul>
+													<li><strong>Account Tax Name</strong>: Enter Account Name for this
+														Tax.</li>
+													<li><strong>Tax</strong>: Enter Tax for this Task.</li>
+
+												</ul><br />
+
+												<p><strong>Tax Edit:</strong> Admin can Edit detail of particular Tax by
+													clicking on Edit detail button. This will open up details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Tax-Edit.png"><br /><br />
+
+											</section>
+
+											<!-- Client Module --->
+											<section id="Client">
+												<h4><strong>4) Client</strong></h4><br />
+												<p><strong>Client List:</strong> Admin can add new Client, manage all
+													Client and view complete list of all Client.</p><br />
+
+												<img alt="Client" src="image/newimage/Admin/user-list.png"><br><br>
+
+
+												<p><strong>Add Client:</strong> Admin can add client details.</p><br />
+
+												<img alt="Client" src="image/newimage/Admin/Client-Add.png"><br><br>
+												<ul>
+													<li><strong>Client Id</strong>: Client Id Auto Generated.</li>
+													<li><strong>First Name</strong>: Enter new First name for this
+														Client.</li>
+													<li><strong>Last Name</strong>: Enter new Last name for this Client.
+													</li>
+													<li><strong>Middle Name</strong>: Enter new Middle name for this
+														Client.</li>
+													<li><strong>Gender</strong>: Select Gender for this Client.</li>
+													<li><strong>Date Of Birth</strong>: Enter new Date Of Birth for this
+														Client.</li>
+													<li><strong>Marital Status</strong>: Select Marital Status for this
+														Client.</li>
+
+													<h5>Company Details</h5>
+													<li><strong>Main Person Name</strong>: Enter new Main Person Name
+														for this Client.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Client.</li>
+													<li><strong>Account Number</strong>: Enter new Account Number for
+														this Client.</li>
+													<li><strong>IFSC Code</strong>:Enter new IFSC Code for this Client..
+													</li>
+													<li><strong>Branch Name</strong>: Enter new Branch Name for this
+														Client.</li>
+													<li><strong>TIN No</strong>: Enter TIN No for this Client.</li>
+													<li><strong>CST No</strong>: Enter CST No for this Client.</li>
+													<li><strong>PAN No</strong>: Enter PAN No for this Client.</li>
+
+													<h5>Address</h5>
+													<li><strong>Address</strong>: Enter new Address for this Client.
+													</li>
+													<li><strong>City</strong>: Enter new City for this Client.</li>
+													<li><strong>State</strong>: Enter new State for this Client.</li>
+													<li><strong>PIN Code</strong>: Enter new PIN Code for this Client.
+													</li>
+
+													<h5>Contact</h5>
+													<li><strong>Alternate Mobile Number</strong>: Enter new Alternate
+														Mobile Number for this Client.</li>
+
+													<h5>Other Info</h5>
+													<li><strong>Email</strong>: Enter new Email for this Client.</li>
+													<li><strong>Password</strong>: Enter new Password for this Client.
+													</li>
+													<li><strong>Upload Image</strong>: Upload image for this Client.
+													</li>
+
+													<h5>Other Contact Details</h5>
+
+													<li><strong>Add New</strong>: Add new Contact Person Name for this
+														Client.</li>
+
+													<li><strong>Contact Person Name</strong>: Enter new Contact Person
+														Name for this Client.</li>
+													<li><strong>Mobile Number</strong>:Enter new Mobile Number for this
+														Client.</li>
+													<li><strong>Designation</strong>:Enter new Designation for this
+														Client.</li>
+													<li><strong>Action</strong>:Delete Contact Person Name.</li>
+
+
+												</ul><br />
+
+												<p><strong>Client View:</strong>
+													Admin can view detail of particular Client by clicking on view
+													detail button. This will open up details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Client-View.png"><br /><br />
+
+												<p><strong> Client Edit:</li></strong></h5>
+													Admin can Edit detail of particular Client by clicking on Edit
+													detail button. This will open up details.</p>
+												<img alt="view detail"
+													src="image/newimage/Admin/Client-Edit.png"><br /><br /><br />
+
+												<!-- <p><strong>Client Archive:</strong>
+					  On click of the	archive	link the Client will	be moved in	to archive.	Once Client is archived your cannot make changes to it but your can get the	report.So your need to make sure	before your move any Client to archive.</p><br/>
+					<img alt="Client Archive" src="image/newimage/Admin/Client-archiv1.png"><br/> -->
+
+												<!-- <hr> -->
+											</section>
+											<!-- Employee Module --->
+											<section id="Employee">
+												<h4><strong>5) Employee </strong></h4><br />
+												<p><strong>Employee List:</strong> Admin can add new Employee, manage
+													all Employee and view complete list of all Employee.</p><br />
+
+												<img alt="Employee" src="image/newimage/Admin/user-list.png"><br><br>
+
+
+												<p><strong>Add Employee:</strong> Admin can add employee details.</p>
+												<br />
+												<img alt="Employee" src="image/newimage/Admin/Employee-Add.png"><br><br>
+												<ul>
+													<li><strong>Employeeid</strong>: Employeeid Auto Generated.</li>
+													<li><strong>First Name</strong>: Enter new First name for this
+														Employee.</li>
+													<li><strong>Last Name</strong>: Enter new Last name for this
+														Employee.</li>
+													<li><strong>Middle Name</strong>: Enter new Middle name for this
+														Employee.</li>
+													<li><strong>Gender</strong>: Select Gender for this Employee.</li>
+													<li><strong>Date Of Birth</strong>: Enter new Date Of Birth for this
+														Employee.</li>
+													<li><strong>Marital Status</strong>: Select Marital Status for this
+														Employee.</li>
+
+													<h5>Address</h5>
+													<li><strong>Address</strong>: Enter new Address for this Employee.
+													</li>
+													<li><strong>City</strong>: Enter new City for this Employee.</li>
+													<li><strong>State</strong>: Enter new State for this Employee.</li>
+													<li><strong>PIN Code</strong>: Enter new PIN Code for this Employee.
+													</li>
+
+													<h5>Contact</h5>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Employee.</li>
+													<li><strong>Alternate Mobile Number</strong>: Enter new Alternate
+														Mobile Number for this Employee.</li>
+													<li><strong>Phone Number</strong>: Enter new Mobile Number for this
+														Employee.</li>
+
+
+													<h5>Other Info</h5>
+													<li><strong>Email</strong>: Enter new Email for this Employee.</li>
+													<li><strong>Send Mail</strong>: Mojoomla Checkbox Send Mail for
+														this Employee.</li>
+													<li><strong>Password</strong>: Enter new Password for this Employee.
+													</li>
+													<li><strong>Upload Image</strong>: Upload image for this Employee.
+													</li>
+
+												</ul> <br />
+
+												<p><strong>Employee View:</strong> Admin can view detail of particular
+													Employee by clicking on view detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Employee-View.png"><br /><br />
+
+												<p><strong> Employee Edit:</strong> Admin can Edit detail of particular
+													Employee by clicking on Edit detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Employee-Edit.png"><br /><br />
+
+												<!-- <p><strong> Employee Archive:</strong>  On click of the	archive	link the Employee will	be moved in	to archive.	Once Employee is archived your cannot make changes to it but your can get the	report.So your need to make sure	before your move any Employee to archive.</p><br/>
+					<img alt="Employee Archive" src="image/newimage/Admin/Employee-archiv.png"><br/><br/> -->
+
+												<!-- <hr> -->
+											</section>
+
+											<section id="Quotation">
+
+												<h4><strong>6) Quotation</strong></h4><br />
+
+												<p><strong>Quotation List:</strong> Admin can add new Quotation, manage
+													all Quotation and view complete list of all Quotation.</p><br />
+
+												<img alt="Quotation"
+													src="image/newimage/Admin/Quotation-list.png"><br><br>
+
+
+												<p><strong>Add Quotation:</strong> Admin can add Quotation details. </p>
+												<br />
+												<img alt="Quotation"
+													src="image/newimage/Admin/Quotation-Add.png"><br><br>
+												<ul>
+
+													<h4><strong>Personal Information</strong></h4>
+													<li><strong>Quotation No</strong>: Quotation No Auto Generated.</li>
+													<li><strong>Quotation date</strong>: Enter new Quotation date for
+														this Quotation.</li>
+													<li><strong>Customer Name</strong>: Select Customer Name for this
+														Quotation.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Quotation.</li>
+													<li><strong>Email</strong>:Enter new Email for this Quotation.</li>
+													<li><strong>Status</strong>: Select Status for this Quotation.</li>
+													<li><strong>Billing Address</strong>: Enter new Billing Address for
+														this Quotation.</li>
+
+													<h5>Other Info</h5>
+													<li><strong>Message</strong>: Enter new Message for this Quotation.
+													</li>
+
+													<h5>Quotation Details</h5>
+													<li><strong>Add new</strong>: Add new Product for this Quotation.
+													</li>
+													<li><strong>Product Name</strong>: Select Product for this
+														Quotation.</li>
+													<li><strong>Quantity</strong>: Enter new Quantity in Product for
+														this Quotation.</li>
+													<li><strong>Price</strong>: Select Product in Display Price for this
+														Quotation.</li>
+													<li><strong>Amount</strong>: Select Product and Enter Quantity in
+														Display Amount for this Quotation.</li>
+													<h5>Account Tax</h5>
+													<li><strong>Add new</strong>: Add new Product for this Quotation.
+													</li>
+													<li><strong>Select Tax Name</strong>: Select Tax for this Quotation.
+													</li>
+													<li><strong>Tax</strong>: Enter new Quantity in Tax for this
+														Quotation.</li>
+
+
+												</ul><br /><br />
+
+												<p><strong>Quotation View:</strong> Admin can view detail of particular
+													Quotation by clicking on view detail button. This will open up
+													details.</p><br />
+												<img alt="Quotation View"
+													src="image/newimage/Admin/Quotation-View.png"><br /><br />
+
+												<p><strong>Quotation Edit:</strong> Admin can Edit detail of particular
+													Quotation by clicking on Edit detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Quotation-Edit.png"><br /><br />
+
+												<p><strong>Quotation Convert to Sell:</strong> Admin can Add Sell detail
+													of particular Quotation by clicking on Convert to Sell detail
+													button. This will open add Sell details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Quotation-Convert.png"><br /><br />
+
+												<hr>
+											</section>
+
+											<!-- Sales Module -->
+											<section id="Sales">
+
+												<h4><strong>7) Sales</strong></h4><br />
+
+												<p><strong>Sales List:</strong> Admin can add new Sales, manage all
+													Sales and view complete list of all Sales.</p><br />
+
+												<img alt="Sales" src="image/newimage/Admin/Sales-list.png"><br><br>
+
+												<p><strong>Add Sales:</strong> Admin can add sales details.</p><br />
+												<img alt="Sales" src="image/newimage/Admin/Sales-Add.png"><br><br>
+												<ul>
+													<li><strong>Quotation No</strong>:Enter New Quotation No for this
+														Sales.</li>
+													<li><strong>Bill No</strong>: Bill No Auto Generated for this Sales.
+													</li>
+													<li><strong>Status</strong>: Select Status for this Sales.</li>
+													<li><strong>Sales Date</strong>: Enter New Sales Date for this
+														Sales.</li>
+													<li><strong>Customer Name</strong>: Select Customer name for this
+														Sales.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Sales.</li>
+													<li><strong>AMC Type</strong>: Select AMC Type for this Sales.</li>
+													<li><strong>Email</strong>: Enter new Email for this Sales.</li>
+													<li><strong>Billing Address</strong>: Enter New Billing Address for
+														this Sales.</li>
+
+													<h5>Sales Details</h5>
+													<li><strong>Add New</strong>: Add New Product for this Sales.</li>
+													<li><strong>Product Name</strong>: Select Product for this Sales.
+													</li>
+													<li><strong>Quantity</strong>: Enter new Quantity in Product for
+														this Sales.</li>
+													<li><strong>Price</strong>: Select Product in Display Price for this
+														Sales.</li>
+													<li><strong>Amount</strong>: Select Product and Enter Quantity in
+														Display Amount for this Sales.</li>
+													<li><strong>Action</strong>: Delete Product for this Sales.</li>
+
+													<h5>Account Tax</h5>
+													<li><strong>Add New</strong>: Add New Tax for this Sales.</li>
+													<li><strong>Tax Name</strong>: Select Tax for this Sales.</li>
+													<li><strong>Tax</strong>: Select Tax Name in Display Tax for this
+														Sales.</li>
+													<li><strong>Action</strong>: Delete Account Tax for this Sales.</li>
+
+
+												</ul><br />
+
+												<p><strong>Sales View:</strong> Admin can view detail of particular
+													Sales by clicking on view detail button. This will open up details.
+												</p><br />
+												<img alt="Sales detail"
+													src="image/newimage/Admin/Sales-View.png"><br /><br />
+
+												<p><strong>Sales Edit:</strong> Admin can Edit detail of particular
+													Sales by clicking on Edit detail button. This will open up details.
+												</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Sales-Edit.png"><br /><br />
+
+												<hr>
+											</section>
+											<!-- AMC Module -->
+
+											<section id="AMC">
+
+												<h4><strong>8) AMC</strong></h4><br />
+												<p><strong>AMC List:</strong>Admin can add new AMC, manage all AMC and
+													view complete list of all AMC.</p><br />
+												<img alt="AMC" src="image/newimage/Admin/AMC-list.png"><br><br>
+
+												<p><strong>Add AMC:</strong> Admin can Add AMC details.</p><br />
+												<img alt="AMC" src="image/newimage/Admin/AMC-Add.png"><br><br>
+												<ul>
+													<li><strong>AMC No</strong>: AMC No Auto Generated for this AMC.
+													</li>
+													<li><strong>Date</strong>: Enter New Date for this AMC.</li>
+													<li><strong>Contact Person</strong>: Enter Contact Person for this
+														AMC.</li>
+													<li><strong>Customer Name</strong>: Select Customer name for this
+														AMC.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														AMC.</li>
+													<li><strong>Assign To</strong>: Select Assign To for this AMC.</li>
+													<li><strong>Email</strong>: Enter new Email for this AMC.</li>
+													<li><strong>Status</strong>: Select Status for this AMC.</li>
+													<li><strong>Billing Address</strong>: Enter New Billing Address for
+														this AMC.</li>
+													<li><strong>Add AMC Details</strong>: Enter New AMC Details for this
+														AMC.</li>
+													<li><strong>Attachment</strong>: Attachment Upload File for this
+														AMC.</li>
+
+													<h5>AMC Details</h5>
+													<li><strong>Add New</strong>: Add New Product for this AMC.</li>
+													<li><strong>Product Name</strong>: Select Product for this AMC.</li>
+													<li><strong>Note</strong>: Enter new Note in Product for this AMC.
+													</li>
+													<li><strong>Action</strong>: Delete Product for this AMC.</li>
+
+												</ul><br />
+												<p><strong>AMC View:</strong> Admin can view detail of particular AMC by
+													clicking on view detail button. This will open up details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/AMC-View.png"><br /><br />
+												<p><strong>AMC Edit:</strong> Admin can Edit detail of particular AMC by
+													clicking on Edit detail button. This will open up details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/AMC-Edit.png"><br /><br />
+												<hr>
+											</section>
+											<!--- Service Module -->
+											<section id="Complaint">
+
+												<h4><strong>9) Complaint</strong></h4><br />
+												<p><strong>Complaint List:</strong> Admin can add new Complaint, manage
+													all Complaint and view complete list of all Complaint.</p><br />
+
+												<img alt="Complaint"
+													src="image/newimage/Admin/Complaint-list.png"><br><br>
+
+												<p><strong>Add Complaint:</strong> Admin can add complaint details.</p>
+												<br />
+												<img alt="Complaint"
+													src="image/newimage/Admin/Complaint-Add.png"><br><br>
+												<ul>
+													<li><strong>Complaint Number</strong>: Complaint No Auto Generated
+														for this Complaint.</li>
+													<li><strong>Status</strong>: Select Status for this Complaint.</li>
+													<li><strong>Complaint Date</strong>: Enter New Complaint Date for
+														this Complaint.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Complaint.</li>
+													<li><strong>Contact Person</strong>: Enter Contact Person for this
+														Complaint.</li>
+													<li><strong>Customer Name</strong>: Select Customer name for this
+														Complaint.</li>
+													<li><strong>Email</strong>: Enter new Email for this Complaint.</li>
+													<li><strong>Close Date</strong>: Enter New Close Date for this
+														Complaint.</li>
+													<li><strong>Complaint Type</strong>: Select Complaint Type for this
+														Complaint.</li>
+													<li><strong>Add Or Remove</strong>: If desired Complaint is not
+														there in the list and your want to add new Complaint then click
+														on <strong>Add Or Remove</strong> button. your can add new
+														Complaint from here.</li>
+													<img alt="Complaint Type"
+														src="image/Admin/Complaint-Type.png"><br><br>
+													<li><strong>Complaint Description</strong>: Enter New Complaint
+														Description for this Complaint.</li>
+													<li><strong> Address</strong>: Enter New Address for this Complaint.
+													</li>
+
+													<li><strong>Complaint Chargeable</strong>: Select Complaint
+														Chargeable for this Complaint.</li>
+													<li><strong>Product Name</strong>: Select Product for this
+														Complaint.</li>
+													<li><strong>Assign To</strong>: Select Assign To for this Complaint.
+													</li>
+													<li><strong>Attachment</strong>: Attachment Upload File for this
+														Complaint.</li>
+													<li><strong>Assign Date</strong>: Enter New Assign date for this
+														Complaint.</li>
+
+												</ul><br />
+
+												<p><strong>Complaint View:</strong> Admin can view detail of particular
+													Complaint by clicking on view detail button. This will open up
+													details.</p><br />
+												<img alt="Complaint detail"
+													src="image/newimage/Admin/Complaint-View.png"><br /><br />
+												<p><strong>Complaint Edit:</strong> Admin can Edit detail of particular
+													Complaint by clicking on Edit detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Complaint-Edit.png"><br /><br />
+
+												<hr>
+											</section>
+											<!-- Service Module -->
+
+											<section id="Service">
+
+												<h4><strong>10) Service </strong></h4><br />
+												<p><strong>Service List:</strong> Admin can add new Service, manage all
+													Service and view complete list of all Service.</p><br />
+
+												<img alt="Service" src="image/newimage/Admin/Service-list.png"><br><br>
+
+												<p><strong>Add Service:</strong> Admin can add service details.</p>
+												<br />
+												<img alt="Service" src="image/newimage/Admin/Service-Add.png"><br><br>
+												<ul>
+													<li><strong>Service Code</strong>: Service Code Auto Generated for
+														this Service.</li>
+													<li><strong>Assign To</strong>: Select Assign To for this Service.
+													</li>
+													<li><strong>Service Date</strong>: Enter New Service Date for this
+														Service.</li>
+													<li><strong>Status</strong>: Select Status for this Service.</li>
+													<li><strong>Customer Name</strong>: Select Customer name for this
+														Service.</li>
+													<li><strong>Service Charge</strong>: Select Service Charge for this
+														Service.</li>
+													<li><strong>Remark</strong>: Enter new Remark for this Service.</li>
+													<li><strong>Service Details</strong>: Enter Service Details for this
+														Service.</li>
+
+													<h5>AMC Details</h5>
+													<li><strong>Add New</strong>: Add New Product for this AMC.</li>
+													<li><strong>Product Name</strong>: Select Product for this AMC.</li>
+													<li><strong>Note</strong>: Enter new Note in Product for this AMC.
+													</li>
+													<li><strong>Action</strong>: Delete Product for this AMC.</li>
+
+												</ul><br />
+
+												<p><strong>Service Edit:</strong> Admin can Edit detail of particular
+													Service by clicking on Edit detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Service-Edit.png"><br /><br />
+												<hr>
+											</section>
+											<!-- Task Module -->
+											<section id="Task">
+
+												<h4><strong>11) Task</strong></h4><br />
+												<p><strong>Task List:</strong> Admin can add new Task, manage all Task
+													and view complete list of all Task.</p><br />
+												<img alt="Task" src="image/newimage/Admin/Task-list.png"><br><br>
+												<p><strong>Add Task:</strong> Admin can add task details.</p><br>
+												<img alt="Task" src="image/newimage/Admin/Task-Add.png"><br><br>
+												<ul>
+													<li><strong>Client</strong>: Select Client for this Task.</li>
+													<li><strong>Assign To</strong>: Select Assign To for this Task.</li>
+													<li><strong>Subject</strong>: Enter Subject for this Task.</li>
+													<li><strong>Assign Date</strong>: Enter New Assign Date for this
+														Task.</li>
+													<li><strong>Task Type</strong>: Select Task Type for this Task.</li>
+													<li><strong>Add Or Remove</strong>: If desired Task is not there in
+														the list and your want to add new Task then click on <strong>Add
+															Or Remove</strong> button. your can add new Task from here.
+													</li>
+													<img alt="Task Type" src="image/Admin/Task-Type.png"><br><br>
+
+													<li><strong>Remarks</strong>: Enter new Remark for this Task.</li>
+													<li><strong>Description</strong>: Enter Description for this Task.
+													</li>
+													<li><strong>Close Date</strong>: Enter Close Date for this Task.
+													</li>
+													<li><strong>Attachment</strong>: Attachment Upload File for this
+														Task.</li>
+													<li><strong>Status</strong>: Select Status for this Task.</li>
+
+												</ul><br />
+
+												<p><strong>Task Edit:</strong> Admin can Edit detail of particular Task
+													by clicking on Edit detail button. This will open up details.</p>
+												<br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Task-Edit.png"><br /><br />
+												<hr>
+											</section>
+
+
+											<!-- Expenses Module -->
+											<section id="Expenses">
+
+												<h4><strong>12) Expenses </strong></h4><br />
+												<p><strong>Expenses List:</strong> Admin can add new Expenses, manage
+													all Expenses and view complete list of all Expenses.</p><br />
+												<img alt="Expenses"
+													src="image/newimage/Admin/Expenses-list.png"><br><br>
+
+												<p><strong>Add Expenses:</strong> Admin can add expenses details.</p>
+												<br />
+												<img alt="Expenses" src="image/newimage/Admin/Expenses-Add.png"><br><br>
+												<ul>
+													<li><strong>Main Label</strong>: Enter Main Label for this Expenses.
+													</li>
+													<li><strong>Date</strong>: Enter Date for this Expenses.</li>
+													<li><strong>Status</strong>: Select Status for this Expenses.</li>
+													<li><strong>Expense Entry</strong>: Enter Expense Amount for this
+														Expenses.<br>Expense Entry Label</li>
+
+													<li><strong>Add More Field</strong>: Add new Expense Entry field for
+														this Expenses.</li>
+												</ul><br />
+												<p><strong>Expenses Edit:</strong> Admin can Edit detail of particular
+													Expenses by clicking on Edit detail button. This will open up
+													details.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Expenses-Edit.png"><br /><br />
+												<p><strong>Monthly Expenses:</strong> You can View Monthly expenses
+													details. </p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Expenses-monthly.png"><br /><br />
+												<ul>
+													<li><strong>Start Date</strong>: Enter Start Date for this Monthly
+														Expenses.</li>
+													<li><strong>End Date</strong>: Enter End Date for this Monthly
+														Expenses.</li>
+													<li><strong>Go</strong>: Click GO Button in view Monthly Expense.
+													</li>
+												</ul>
+												<hr>
+											</section>
+											<!-- Income Module -->
+											<section id="Income">
+
+												<h4><strong>13) Income </strong></h4><br />
+												<p><strong>Income List:</strong> Admin can add new Income, manage all
+													Income and view complete list of all Income.</p><br />
+												<img alt="Income" src="image/newimage/Admin/Income-list.png"><br><br>
+
+												<p><strong>Add Income:</strong> Admin can add income details.</p><br />
+												<img alt="Income" src="image/newimage/Admin/Income-Add.png"><br><br>
+												<ul>
+													<li><strong>Customer Name</strong>: select Customer Name for this
+														Income.</li>
+													<li><strong>Status</strong>: Select Status for this Income.</li>
+													<li><strong>Date</strong>: Enter Date for this Income.</li>
+													<li><strong>Main Label</strong>: Enter Main Label for this Income.
+													</li>
+													<li><strong>Income Entry</strong>: Enter Income Amount for this
+														Income.<br>Income Entry Label for this Income</li>
+													<li><strong>Add More Field</strong>: Add new Income Entry field for
+														this Income.</li>
+												</ul><br />
+
+												<p><strong>Income Edit:</strong> Admin can Edit detail of particular
+													Income by clicking on Edit detail button. This will open up details.
+												</p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Income-Edit.png"><br /><br />
+
+												<p><strong>Monthly Income:</strong> Admin can View Monthly Income
+													details. </p><br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Income-monthly.png"><br /><br />
+												<ul>
+													<li><strong>Start Date</strong>: Enter Start Date for this Monthly
+														Income.</li>
+													<li><strong>End Date</strong>: Enter End Date for this Monthly
+														Income.</li>
+													<li><strong>Go</strong>: Click GO Button in view Monthly Income.
+													</li>
+												</ul>
+
+												<hr>
+											</section>
+
+											<!-- Reports Module -->
+											<section id="Reports">
+
+												<h4><strong>14) Reports </strong></h4><br />
+
+												<h5><strong>I)Complaint Reports:</li></strong></h5><br />
+												<p>You can start date and end date between view complaint report.</p>
+												<br />
+												<img alt="Income" src="image/newimage/Admin/Report-comp.png"><br><br>
+												<ul>
+													<li><strong>Start Date</strong>: Enter Start Date for this Complaint
+														Report.</li>
+													<li><strong>End Date</strong>: Enter End Date for this Complaint
+														Report.</li>
+													<li><strong>Select Option</strong>: Select Option Complaint for this
+														Complaint Report.</li>
+													<li><strong>Select Client</strong>: Select Client Name for this
+														Complaint Report.</li>
+												</ul><br />
+												<p>When clicking on GO button. This will open Start Date and End date
+													Between In Complaint Report.</p>
+												<h5><strong>II)Sales Reports:</strong></h5><br />
+												<p>You can start date and end date between view Sales report.</p><br />
+												<img alt="Income" src="image/newimage/Admin/Report-Sales.png"><br><br>
+												<ul>
+													<li><strong>Start Date</strong>: Enter Start Date for this Sales
+														Report.</li>
+													<li><strong>End Date</strong>: Enter End Date for this Sales Report.
+													</li>
+													<li><strong>Select Client</strong>: Select Client Name for this
+														Sales Report.</li>
+												</ul><br>
+												<p>When clicking on GO button. This will open Start Date and End date
+													Between In Sales Report.</p><br>
+												<h5><strong>III)Services Reports:</strong></h5> <br />
+												<p>You can start date and end date between view Services report.</p>
+												<br />
+												<img alt="view detail"
+													src="image/newimage/Admin/Report-Service.png"><br><br />
+												<ul>
+													<li><strong>Start Date</strong>: Enter Start Date for this Service
+														Report.</li>
+													<li><strong>End Date</strong>: Enter End Date for this Service
+														Report.</li>
+													<li><strong>Select Client</strong>: Select Client Name for this
+														Service Report.</li>
+												</ul><br>
+												<p>When clicking on GO button. This will open Start Date and End date
+													Between In Service Report.</p><br />
+
+												<hr>
+											</section>
+											<!-- Mail Format -->
+											<section id="Mail">
+
+												<h4><strong>15) Mail Format </strong></h4><br />
+												<p>Admin can set mail format using this details.</p><br />
+												<img alt="view detail" src="image/newimage/Admin/Mail.png"><br /><br />
+
+												<hr>
+											</section>
+
+											<!-- Client View In AMC System -->
+											<!-- Client Dashboard -->
+											<section id="Dashboard">
+												<h3><strong>F) Client View :</strong></h3><br />
+												<h4><strong>1)Dashboard </strong></h4><br>
+												<p>client side dashboard view.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Client/Dashboard.png"><br /><br />
+												<hr>
+											</section>
+
+											<!-- Client View -->
+											<section id="Client_Name">
+
+												<h4><strong>2)Client </strong></h4><br>
+												<p><strong>Client List:</strong> Client can see his own details.</p>
+												<br />
+												<img alt="view detail"
+													src="image/newimage/Client/Client-List.png"><br><br>
+												<p><strong>Client View:</strong>Client view with much more details.</p>
+												<br />
+												<img alt="view detail"
+													src="image/newimage/Client/Client-View.png"><br /><br />
+
+												<hr>
+											</section>
+											<section id="Quotation_Name">
+
+												<h4><strong>3) Quotation </strong></h4><br />
+												<p><strong>Quotation List:</strong> Client will see all the quotation
+													given to him by the company.</p><br />
+												<img alt="view detail" src="image/newimage/Client/Quotation-List1.png">
+												<br><br>
+
+												<p><strong>Quotation View:</strong>Client can view Quotation details.
+												</p><br />
+												<img alt="view detail" src="image/newimage/Client/Quotation-View.png">
+												<br /><br />
+
+												<p><strong>Quotation Add:</strong> Client will Add the quotation.</p>
+												<br />
+												<img alt="view detail" src="image/newimage/Client/Quotation-add.png">
+												<br><br>
+
+												<ul>
+
+													<h4><strong>Personal Information</strong></h4>
+													<li><strong>Quotation No</strong>: Quotation No Auto Generated.</li>
+													<li><strong>Quotation date</strong>: Enter new Quotation date for
+														this Quotation.</li>
+													<li><strong>Customer Name</strong>: Customer Name for this
+														Quotation.</li>
+													<li><strong>Mobile Number</strong>: Enter new Mobile Number for this
+														Quotation.</li>
+													<li><strong>Email</strong>:Enter new Email for this Quotation.</li>
+													<li><strong>Status</strong>: Select Status for this Quotation.</li>
+													<li><strong>Billing Address</strong>: Enter new Billing Address for
+														this Quotation.</li>
+
+													<h5>Other Info</h5>
+													<li><strong>Message</strong>: Enter new Message for this Quotation.
+													</li>
+
+													<h5>Quotation Details</h5>
+													<li><strong>Add new</strong>: Add new Product for this Quotation.
+													</li>
+													<li><strong>Product Name</strong>: Select Product for this
+														Quotation.</li>
+													<li><strong>Quantity</strong>: Enter new Quantity in Product for
+														this Quotation.</li>
+													<li><strong>Price</strong>: Select Product in Display Price for this
+														Quotation.</li>
+													<li><strong>Amount</strong>: Select Product and Enter Quantity in
+														Display Amount for this Quotation.</li>
+													<h5>Account Tax</h5>
+													<li><strong>Add new</strong>: Add new Product for this Quotation.
+													</li>
+													<li><strong>Select Tax Name</strong>: Select Tax for this Quotation.
+													</li>
+													<li><strong>Tax</strong>: Enter new Quantity in Tax for this
+														Quotation.</li>
+
+
+												</ul><br /><br />
+												<hr>
+											</section>
+											<!-- <section id="Sales_Name">
+	      
+			 <h4><strong>4)Purchase </strong></h4><br/>
+				<p><strong>Purchase List:</strong> Client will see all the purchased items.</p><br/>
+					 <img alt="view detail" src="image/newimage/Client/purchase.png"><br><br>
+				
+				<p><strong>Purchase View:</strong> Client can see the Purchase details of particular purchase order.</p><br/>
+					 <img alt="view detail" src="image/newimage/Client/Sales-View.png"><br><br>
+				
+            <hr>
+            </section>  -->
+
+											<section id="AMC_Name">
+
+												<h4><strong>4) AMC </strong></h4><br>
+												<p><strong>AMC List:</strong>Client will see all current active AMC with
+													your company.</p></br>
+												<img alt="view detail"
+													src="image/newimage/Client/AMC-List.png"><br /><br />
+
+												<hr>
+											</section>
+											<section id="Complaint_Name">
+
+												<h4><strong>5)Complaint </strong></h4><br />
+												<p><strong>Complaint List:</strong>Client will see all the complains he
+													has raised.</p></br>
+												<img alt="view detail"
+													src="image/newimage/Client/Complaint-List.png"><br><br>
+												<p><strong>Complaint Add:</strong>Client can register new complain or
+													service call using this form this complaint.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Client/Complaint-Add.png"><br><br>
+												<p><strong>Complaint View:</strong> Client can view complaint.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Client/Complaint-View.png"><br><br>
+												<p><strong>Complaint Edit:</strong>Client can edit complaint.</p><br />
+												<img alt="view detail"
+													src="image/newimage/Client/Complaint-Edit.png"><br /><br />
+
+												<hr>
+											</section>
+											<!-- Service Module -->
+
+											<section id="Service_Name">
+
+												<h4><strong>6) Service </strong></h4><br />
+												<p><strong>Service List:</strong> Client can view complete list of all
+													Service.</p><br />
+
+												<img alt="Service" src="image/newimage/client/Service-list.png"><br><br>
+
+												<hr>
+											</section>
+											<!-- Task Module -->
+										</section>
+										<!-- Employee View In AMC System -->
+										<!-- Employee Dashboard -->
+										<section id="Dashboard1">
+
+											<h3><strong>E) Employee View </strong></h3><br>
+											<h4><strong>1)Dashboard </strong></h4><br>
+											<p>Employee side dashboard view.</p><br />
+											<img alt="view detail"
+												src="image/newimage/Employee/Dashboard.png"><br /><br />
+											<p>Here employee have all module access. He can do all action like add,
+												edit, delete, view in all module. Only setting, accessright and email
+												template this three module can't access employee.</p><br />
+										</section>
+
+
+									</section>
+
+									<!-- FAQ -->
+									<section id="FAQ">
+
+										<h3><strong>G) FAQ </strong></h3><br>
+										<h4><strong>1) I Dont see Installer Page properly.No background image,no Next
+												button nothing. </strong></h4><br>
+										<p> Make Sure you have .htaccess file on main directory[in AMC folder].Where
+											src,webroot,config directory[].</p>
+										<p>If you already have .htaccess Make sure your host has mod_rewrite module
+											on.Basically on apache server.</p>
+										<p>If you want to have any paid customization as per your requirements, you can
+											contact us on sales@mojoomla.com.</p><br />
+
+
+										<hr>
+									</section>
+
+				</div>
+				<!-- start-footer-->
+				<div id="footer-sm"> © 2017 Mojoomla All Rights Reserved. </div>
+				<!-- end-footer -->
+				<div class="white-space"></div>
+			</div>
+		</section>
+		<!-- container -->
+		<!-- end-footer -->
+		<span id="scroll-top"><a class="scrollup"></a></span>
+	</div>
+	<!-- end-wrap -->
+	<!-- End Document
+         ================================================== -->
+	<script src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/doubletaptogo.js"></script>
+	<script type="text/javascript" src="js/cube-custom.js"></script>
+
+
+</body>
+<script>
+	$("#admin").click(function () {
+		$('#admin_id').toggle();
+	});
+</script>
+<script>
+	$("#client_click").click(function () {
+		$('#clientid').toggle();
+	});
+</script>
+<script>
+	$("#employee_click").click(function () {
+		$('#employeeid').toggle();
+	});
+</script>
+
+</html>
