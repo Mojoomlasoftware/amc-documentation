@@ -140,84 +140,126 @@
 						<section id="Package">
 							<hr class="vertical-space2">
 
-
 							<section id="Installation">
 								<h3><strong>B) Installation</strong></h3><br><br>
 
+								<h4><strong>1) Backend Server Requirements</strong></h4>
+								<p>Please make sure the following server environment is available:</p>
 
+								<ul>
+									<li><strong>PHP Version:</strong> 7.3 or higher</li>
+									<li><strong>Laravel Version:</strong> 8.x</li>
+									<li><strong>Database:</strong> MySQL</li>
+									<li><strong>cPanel:</strong> Recommended</li>
+									<li><strong>Composer:</strong> Must be installed</li>
+								</ul>
 
+								<p><strong>Required PHP Extensions:</strong></p>
+								<ul>
+									<li>BCMath</li>
+									<li>Ctype</li>
+									<li>Fileinfo</li>
+									<li>JSON</li>
+									<li>Mbstring</li>
+									<li>OpenSSL</li>
+									<li>PDO</li>
+									<li>Tokenizer</li>
+									<li>XML</li>
+								</ul>
 
-								<h3><strong>I) Backend Setup </strong></h3><br>
-								<h6><strong>Require a PHP version ">= <mark>8.2.0</mark>".</strong></h6><br>
-								<h4><strong>1) Database Creation </strong></h4><br>
-								<p> First Create new Database in MySQL.</p>
+								<h4><strong>2) Create Database</strong></h4>
+								<p>Login to your hosting panel → open the <strong>MySQL Databases</strong> section → create a new database and user → assign all privileges.</p>
 
-								<h4><strong>2) Utilizing Build and Source Packages in React Application </strong></h4>
 								<br>
-								<h3>
-									<p>1. Using the Build Package </p>
-								</h3>
-								<p><strong>Purpose</strong>: Deploy the application without modifications.</p>
 
-								<h3>
-									<p>2. Using the Source Package </p>
-								</h3>
-								<p><strong>Purpose</strong>: Modify or extend the application. <br>
-									<strong>Setup</strong>: Navigate to the source package directory in your
-									terminal.<br>
-									<strong>Installation</strong>:Run npm install to install the necessary dependencies.
-								</p>
-
-
-								<h4><strong>1) FTP Upload</h4></strong>
+								<h4><strong>3) Upload Files via FTP</strong></h4>
 								<ol>
-									<li>If you have not FileZilla then download <a target="_blank"
-											href="https://filezilla-project.org/">here</a>
+									<li>Unzip the <mark>amc_package.zip</mark> file.</li>
+									<li>Inside it, you will find:
+										<ul>
+											<li><mark>amc_api.zip</mark> → Laravel Backend</li>
+											<li><mark>amc_react.zip</mark> → React Frontend</li>
+										</ul>
 									</li>
-									<li>Unzip the "
-										<mark>amc_package.zip</mark>
-										" file
-									</li>
-									<li>Unzip the "
-										<mark>amc_api.zip</mark>
-										" file and upload <mark>amc_api</mark> folder into your server using through
-										FileZilla.
-									</li>
-									<li>Unzip the "
-										<mark>amc_react.zip</mark>
-										" file and upload <mark>amc_react</mark> folder into your server using through
-										FileZilla.
-									</li>
-									<!-- <li>If you don't know then follow this <a target="_blank"
-											href="https://www.youtube.com/watch?v=XJEsFds7588">link</a> for file upload
-										process with FTP.</li> -->
-									<!-- <li>Upload the extracted
-									<mark>"AMC_backend"</mark>
-					 				folder into your server using through FileZilla. If you don't know then follow this <a target="_blank" href="https://www.youtube.com/watch?v=XJEsFds7588">link</a> for file upload process.</li> -->
+									<li>Upload the <mark>amc_api</mark> folder to your server using FTP (example: FileZilla).</li>
+									<li>Upload the <mark>amc_react</mark> folder to your server using FTP.</li>
 								</ol>
-								<h4><strong>2) Env File Update</strong></h4><br>
-								<p>Above process completed then go to <mark>amc_api/</mark> folder and update .env file
-									in notepad as per the your MySQL database configuration.</p>
-								<P><strong>Note : </strong> MySQL Details Configuration is not required.</p>
-								<p> For the SMTP Configuration follow this <a target="_blank"
-										href="https://support.google.com/mail/answer/185833?hl=en-GB">link</a></p>
-								<img alt="Tax" src="image/Laragon/Database.png"><br><br>
 
+								<br>
+
+								<h4><strong>4) Update Backend .env File</strong></h4>
+								<p>Inside the <mark>amc_api</mark> folder, open the <strong>.env</strong> file and update the following details.</p>
+
+								<h5><strong>Database Configuration (Example)</strong></h5>
+
+								<p>DB_CONNECTION=mysql</p>
+								<p>DB_HOST=127.0.0.1</p>
+								<p>DB_PORT=3306</p>
+								<p>DB_DATABASE=amc</p>
+								<p>DB_USERNAME=root</p>
+								<p>DB_PASSWORD=</p>
+
+								<p>Replace these values based on your hosting provider's database credentials.</p>
+
+								<h5><strong>SMTP Configuration (Example)</strong></h5>
 								
-								<h3><strong>II) Frontend Setup </strong></h3><br>
-								<h4><strong>1) Backend URL Update</strong></h4><br>
-								<p>1. Build Package</p>
-								<p> Go to <mark>amc_react/</mark> folder and change your backend api URL insted of
-									<strong>"http://api.amc.niftysol.com/api"</strong> this base URL
+								<p>MAIL_MAILER=smtp</p>
+								<p>MAIL_HOST=sandbox.smtp.mailtrap.io</p>
+								<p>MAIL_PORT=2525</p>
+								<p>MAIL_USERNAME=</p>
+								<p>MAIL_PASSWORD=</p>
+								<p>MAIL_ENCRYPTION=null</p>
+								<p>MAIL_FROM_ADDRESS=no-reply@yaraa.com</p>
+								<p>MAIL_FROM_NAME="${APP_NAME}"</p>
+								
+
+								<p>Enter your actual SMTP username and password (Mailtrap or any mail provider).</p>
+
+								<p>After updating <strong>.env</strong>, run the following commands:</p>
+
+								<p>composer install</p>
+								<p>php artisan key:generate</p>
+								<p>php artisan migrate</p>
+
+								<p><i>Commands can be executed via SSH or Hosting Panel Terminal.</i></p>
+
+								<br>
+
+								<h3><strong>II) Frontend Setup</strong></h3><br>
+
+								<h4><strong>5) Update Frontend Environment Configuration</strong></h4>
+
+								<p><strong>If using Build Package:</strong></p>
+								<p>Go to <mark>env.js</mark> and update:</p>
+
+								<p>
+								REACT_APP_BASE_URL = "https://yourdomain.com/amc_api/public/api"
 								</p>
-								<img alt="Tax" src="image/update_url.png"><br><br>
-								<p>2. Source Package</p>
-								<p> Go to <mark>amc_react/</mark> folder and change your backend api URL insted of
-									<strong>"http://api.amc.niftysol.com/api"</strong> this base URL
+
+								<p><strong>If using Source Package:</strong></p>
+								<p><strong>Node version:</strong> 16.x required</p>
+
+								<p>Install dependencies:</p>
+								<p>
+								npm install
 								</p>
-								<img alt="Tax" src="image/update_url_source.png"><br><br>
-								<h4><strong>2) Run the Application </strong></h4><br>
-								<p>Now Run the Application with react url.</p><br><br>
+
+								<p>Then open <strong>.env</strong> and update:</p>
+
+								<p>
+								REACT_APP_BASE_URL = "https://yourdomain.com/amc_api/public/api"
+								</p>
+
+								<br>
+
+								<h4><strong>6) Run the Application</strong></h4>
+								<p>Once everything is configured, access your React application at:</p>
+
+								<p><strong>https://your-domain.com</strong></p>
+
+								<p>The AMC frontend will now load and communicate with your Laravel API backend.</p>
+
+								<br><br>
 
 								<h5 id="localinstallation">(*). Local Installation Setup</h5><br>
 								<section id="xamppinstall">
